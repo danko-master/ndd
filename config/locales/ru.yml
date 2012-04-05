@@ -252,9 +252,13 @@ ru:
   page:
     main: "Главная"
     news: "События"
+    admin_auth_welcome: "Пожалуйста, введите email и пароль для получения доступа к секретному уровню."
+    admin_auth_welcome_header: "Вход в систему администрирования"
   buttons:
     save: "Сохранить"
     finish: "Готово"
+    enter: "Вход"
+    exit: "Выход"
   activemodel:
     errors:
       <<: *errors

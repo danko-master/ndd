@@ -14,12 +14,11 @@ Ndd::Application.routes.draw do
     resources :pages
     
     resources :users
-      match '/registration',  :to => 'users#new'
 
 
     resources :sessions, :only => [:new, :create, :destroy]    
-      match '/signup',  :to => 'users#new'
-      match '/signin',  :to => 'sessions#new'
+      match '/signin',  :to => 'sessions#new' # вход в админку
       match '/signout', :to => 'sessions#destroy'
+      match '/enter',  :to => 'sessions#new' # вход в админку, альтернативный путь
 
 end

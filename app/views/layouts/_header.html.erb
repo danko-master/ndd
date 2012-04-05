@@ -1,4 +1,5 @@
 <header class="header">
+	<%= link_to logo, root_path %>
 	<%= main_page_data.contact %>
 	<nav>  	 
    	 <ul>
@@ -6,6 +7,9 @@
     	<% for page in all_menu_pages %>
 			<li><%= link_to page.name, page %></li>
 		<%  end %>
+		<% if signed_in? %>
+			<li><%= link_to current_user.name, current_user %> (<%= link_to t('buttons.exit'), signout_path, :method => :delete %>)</li>
+		<% end %>
    	 </ul>   	 
  	</nav> 	 	
 </header>

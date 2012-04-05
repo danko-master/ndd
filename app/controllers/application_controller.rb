@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   
   #for sessions
-  #include SessionsHelper
+  include SessionsHelper
   
   # Для меню
   include PagesHelper

@@ -4,16 +4,16 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = User.authenticate(params[:session][:email],
+     user = User.authenticate(params[:session][:email],
                              params[:session][:password])
     if user.nil?
       flash.now[:error] = t('activerecord.errors.controllers.message.attributes.auth.auth_error')
+      @title = t('page.admin_auth_welcome_header')
       render 'new'
     else
       sign_in user
-      flash.now[:success] = t('activerecord.errors.controllers.message.attributes.auth.auth_success')
-      #render 'success'
-      redirect_back_or user
+      #flash.now[:success] = t('activerecord.errors.controllers.message.attributes.auth.auth_success')
+      redirect_to user
     end
   end
   
@@ -22,7 +22,5 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
   
-  def success
-  end
-  
+ 
 end

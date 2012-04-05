@@ -1,0 +1,48 @@
+
+
+
+
+.div-flash-error{	
+	text-align: center;
+	
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	padding: 10px;	
+	width: 300px;
+	
+	border-style: dashed;
+	border-width: 2px;
+	border-color: red;
+	border-radius:6px;
+
+}
+
+.div-flash-success{	
+	text-align: center;
+	
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	padding: 10px;	
+	width: 300px;
+	
+	border-style: dashed;
+	border-width: 2px;
+	border-color: green;
+	border-radius:6px;
+
+}
+
+.div-flash-notice{	
+	text-align: center;
+	
+	margin-top: 20px;
+	margin-bottom: 20px;	
+	padding: 10px;	
+	width: 300px;
+	
+	border-style: dashed;
+	border-width: 2px;
+	border-color: orange;
+	border-radius:6px;
+
+}

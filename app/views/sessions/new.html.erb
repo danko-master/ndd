@@ -1,8 +1,7 @@
-<% if !signed_in? %>
 
-	<h1>Вход</h1>
+	<h1><%= t('page.admin_auth_welcome_header')%></h1>
 	
-	<p>Пожалуйста, введите email и пароль для получения доступа к секретному уровню.</p>
+	<p><%= t('page.admin_auth_welcome')%></p>
 	
 	<%= form_for(:session, :url => sessions_path) do |f| %>
 	
@@ -17,8 +16,8 @@
 	    <%= f.password_field :password %>
 	  </div>
 	  <div class="div-actions">
-	    <%= f.submit "Войти!" %>
+	    <%= f.submit t('buttons.enter') %>
 	  </div>
 	<% end %>
 
-<% end %>
+

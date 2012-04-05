@@ -8,3 +8,20 @@ class Main < ActiveRecord::Base
    validates :content,
                 :presence => true
 end
+# == Schema Information
+#
+# Table name: mains
+#
+#  id              :integer         not null, primary key
+#  title           :string(255)     default("Empty string"), not null
+#  content         :text            default("Empty string"), not null
+#  metadescription :text            default(""), not null
+#  metakeywords    :text            default(""), not null
+#  head            :text            default(""), not null
+#  contact         :text            default(""), not null
+#  footer          :text            default(""), not null
+#  counter         :text            default(""), not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
