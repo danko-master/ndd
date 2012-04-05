@@ -1,0 +1,24 @@
+<% if !signed_in? %>
+
+	<h1>Вход</h1>
+	
+	<p>Пожалуйста, введите email и пароль для получения доступа к секретному уровню.</p>
+	
+	<%= form_for(:session, :url => sessions_path) do |f| %>
+	
+
+	
+	  <div class="div-field">
+	    <%= f.label :email %><br />
+	    <%= f.text_field :email %>
+	  </div>
+	  <div class="div-field">
+	    <%= f.label :password %><br />
+	    <%= f.password_field :password %>
+	  </div>
+	  <div class="div-actions">
+	    <%= f.submit "Войти!" %>
+	  </div>
+	<% end %>
+
+<% end %>

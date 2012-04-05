@@ -1,0 +1,26 @@
+<h1>Добавление нового пользователя</h1>
+
+<%= form_for(@user) do |f| %>
+
+<%= render 'layouts/error_user_messages', :object => f.object %>
+
+  <div class="div-field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+  <div class="div-field">
+    <%= f.label :email %><br/>
+    <%= f.text_field :email %>
+  </div>
+  <div class="div-field">
+    <%= f.label :password, "Пароль" %><br/>
+    <%= f.password_field :password %>
+  </div>
+  <div class="div-field">
+    <%= f.label :password_confirmation, "Подтверждение пароля" %><br/>	
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="div-actions">
+    <%= f.submit "Создать!" %>
+  </div>
+<% end %>

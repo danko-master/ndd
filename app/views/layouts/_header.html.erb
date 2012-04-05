@@ -1,0 +1,11 @@
+<header class="header">
+	<%= main_page_data.contact %>
+	<nav>  	 
+   	 <ul>
+   	 	<li><%= link_to t('page.main'), root_path %></li>
+    	<% for page in all_menu_pages %>
+			<li><%= link_to page.name, page %></li>
+		<%  end %>
+   	 </ul>   	 
+ 	</nav> 	 	
+</header>

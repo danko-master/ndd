@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %></title>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/stylesheets' %>
+  
+  <meta name="description" content="<%= yield :metadescription %>" />
+  <meta name="keywords" content="<%= yield :metakeywords %>" />
+  <%= yield :head %>
+  
+</head>
+<body>
+	
+<%= render 'layouts/header' %>
+
+<%= yield %>
+
+
+<%= render 'layouts/footer' %>
+
+
+<%= debug(params) if Rails.env.development? %>
+
+</body>
+</html>
