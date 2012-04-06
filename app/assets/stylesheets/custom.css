@@ -1,6 +1,22 @@
 
 
 
+.div-field {
+	margin-top: 10px;
+}
+
+
+.div-actions{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.div-content{	
+	margin-top: 40px;	
+	margin-bottom: 20px;
+
+}
+
 
 .div-flash-error{	
 	text-align: center;
@@ -45,4 +61,18 @@
 	border-color: orange;
 	border-radius:6px;
 
+}
+
+
+.div-error-explanation {
+	
+	width: 500px;
+	
+	border-style: dashed;
+	border-width: 2px;
+	border-color: red;
+	border-radius:6px;
+  
+  	padding: 25px;
+  	margin: 10px;
 }

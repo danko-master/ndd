@@ -1,10 +1,10 @@
-<h1>Редактирование профиля</h1>
+<h1><%= t('page.user_profile_welcome') %></h1>
 
 <%= form_for(@user) do |f| %>
   <%= render 'layouts/error_user_messages', :object => f.object %>
   
   <div class="div-field">
-    <%= f.label :name %><br />
+    <%= f.label :name, t('field.name') %><br />
     <%= f.text_field :name %>
   </div>
   <div class="div-field">
@@ -12,14 +12,14 @@
     <%= f.text_field :email %>
   </div>
   <div class="div-field">
-    <%= f.label :password, "Пароль" %><br />
+    <%= f.label :password, t('field.password') %><br />
     <%= f.password_field :password %>
   </div>
   <div class="div-field">
-    <%= f.label :password_confirmation, "Подтверждение пароля" %><br />
+    <%= f.label :password_confirmation, t('field.password_confirm') %><br />
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="div-actions">
-    <%= f.submit "Обновить" %>
+    <%= f.submit t('buttons.save') %>
   </div>
 <% end %>

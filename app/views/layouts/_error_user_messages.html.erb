@@ -1,0 +1,14 @@
+<% if object.errors.any? %>
+  <div class="div-error-explanation">
+    <h2><%= t('activerecord.errors.controllers.message.attributes.user.user_update_error')%> (<%= pluralize(object.errors.count, "error") %>)
+        <br/><%= object.class.to_s.underscore.humanize.downcase %></h2>
+        <br/>
+    <p><%= t('activerecord.errors.controllers.message.attributes.auth.error_fields')%></p>
+    <br/>
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
