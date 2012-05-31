@@ -1,0 +1,14 @@
+<ul id="child_<%= childrens.id %>" class="ul-connectedSortable">
+	<li class='li-page sublevel' id="li-child_<%= childrens.id %>">[тащить сюда для вложения]</li>
+<% Page.where({:parent_id => childrens.id}).order("order_id").each do |child| %>
+
+		<%= content_tag_for :li, child, :class => 'li-page child' do %>
+			<span class='handle'>[<%= t('page.item_move') %>]</span>
+        	[page <%= child.id %>] [parent <%= child.parent_id %>] [order <%= child.order_id %>] <%= link_to child.name, child %> 
+    		(<%= link_to image_tag("buttons/edit.png", :alt => "#{t('buttons.edit')} #{child.name}", :title => "#{t('buttons.edit')} #{child.name}", :class => 'img-buttons'), edit_page_path(child.id) %>) 
+    		<%= link_to image_tag("buttons/delete.png", :alt => "#{t('buttons.delete')} #{child.name}", :title => "#{t('buttons.delete')} #{child.name}", :class => 'img-buttons'), child, :method => :delete, :confirm => t('page.confirm_delete') %> 
+        	<%= render 'childrens', :childrens => child %>
+        <% end %>
+        
+<% end %>
+</ul>

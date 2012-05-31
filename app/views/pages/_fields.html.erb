@@ -1,0 +1,35 @@
+  <%= render 'layouts/error_page_messages', :object => f.object %>
+
+  <div class="div-field">
+    <%= f.label :name, t('field.page_name') %><br />
+    <%= f.text_field :name, :class => "text-field" %>
+  </div>
+
+  <div class="div-field">
+    <%= f.label :title, t('field.page_title') %><br />
+    <%= f.text_field :title, :class => "text-field" %>
+  </div>
+  
+  <div class="div-field">
+    <%= f.label :metakeywords, t('field.page_meta_keywords') %><br />
+    <%= f.text_field :metakeywords, :class => "text-field" %>
+  </div>
+  
+  <div class="div-field">
+    <%= f.label :metadescription, t('field.page_meta_description') %><br />
+    <%= f.text_field :metadescription, :class => "text-field" %>
+  </div>
+  
+  <div class="div-field">
+    <%= f.label :head, t('field.page_head') %><br />
+    <%= f.text_area :head, :class => "textarea-head" %>
+  </div>  
+
+  <div class="div-field">
+    <%= f.label :content, t('field.page_content') %><br />
+    <%= f.cktext_area :content, :class => "textarea-content" %>
+  </div>
+  
+  <div class="div-field">
+    <%= f.check_box :ismenu, :class => "checkbox-field" %><%= f.label :ismenu, t('field.page_is_menu') %>    
+  </div>
