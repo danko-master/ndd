@@ -1,3 +1,60 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.handle {
+  font-size: 0.8em;
+  color: #777;
+  cursor: move;
+}
+
+
+.li-page{
+  margin-bottom: 5px;
+  padding: 7px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #ccc;
+  border-radius:6px;
+}
+
+.child{
+  margin: 4px;
+  margin-left: 10px;
+}
+
+.ui-state-highlight {
+  height: 6em;
+  background: #eee;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  
+  border-style: dashed;
+  border-width: 1px;
+  border-color: orange;
+  border-radius:6px;
+}
+
+.ul-connectedSortable {
+  margin-top: 5px;
+  margin-bottom: 5px;  
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.li-state-highlight {
+    background: #eee;
+}
+
+.sublevel {
+  font-size: 0.8em;
+  color: #aaa;
+  background: #fef;
+  
+  height: 1.7em;
+  padding: 5px;
+  
+  list-style-type: none;
+  border: 0px;
+}
+

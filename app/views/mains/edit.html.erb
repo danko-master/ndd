@@ -1,2 +1,51 @@
-<h1>Mains#edit</h1>
-<p>Find me in app/views/mains/edit.html.erb</p>
+<h1><%= t('page.main_edit_welcome') %></h1>
+
+
+<%= form_for(@main) do |f| %>
+  
+  <%= render 'layouts/error_page_messages', :object => f.object %>
+
+  <div class="div-field">
+    <%= f.label :title, t('field.page_title') %><br />
+    <%= f.text_field :title, :class => "text-field" %>
+  </div>
+  
+  <div class="div-field">
+    <%= f.label :metakeywords, t('field.page_meta_keywords') %><br />
+    <%= f.text_field :metakeywords, :class => "text-field" %>
+  </div>
+  
+  <div class="div-field">
+    <%= f.label :metadescription, t('field.page_meta_description') %><br />
+    <%= f.text_field :metadescription, :class => "text-field" %>
+  </div>
+  
+  <div class="div-field">
+    <%= f.label :head, t('field.page_head') %><br />
+    <%= f.text_area :head, :class => "textarea-head" %>
+  </div>  
+  
+  <div class="div-field">
+    <%= f.label :contact, t('field.main_contact') %><br />
+    <%= f.text_area :contact, :class => "textarea-head" %>
+  </div> 
+  
+  <div class="div-field">
+    <%= f.label :content, t('field.page_content') %><br />
+    <%= f.cktext_area :content, :class => "textarea-content" %>
+  </div>
+
+  <div class="div-field">
+    <%= f.label :footer, t('field.main_footer') %><br />
+    <%= f.text_area :footer, :class => "textarea-head" %>
+  </div> 
+  
+ <div class="div-field">
+    <%= f.label :counter, t('field.main_counter') %><br />
+    <%= f.text_area :counter, :class => "textarea-head" %>
+  </div>   
+  
+  <div class="div-actions">
+    <%= f.submit t('buttons.save') %>
+  </div>
+<% end %>

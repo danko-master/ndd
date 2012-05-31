@@ -3,12 +3,13 @@
 	<%= main_page_data.contact %>
 	<nav>  	 
    	 <ul>
-   	 	<li><%= link_to t('page.main'), root_path %></li>
+   	 	<li><%= link_to t('page.main'), root_path %><% if signed_in? %> (<%= link_to t('buttons.edit'), edit_main_path(main_page_data.id), :class => "a-admin-menu" %>)<% end %></li>
     	<% for page in all_menu_pages %>
 			<li><%= link_to page.name, page %></li>
 		<%  end %>
 		<% if signed_in? %>
-			<li><%= link_to current_user.name, edit_user_path(current_user) %> (<%= link_to t('buttons.exit'), signout_path, :method => :delete %>)</li>
+			<li><%= link_to t('buttons.all_pages_edit'), pages_path, :class => "a-admin-menu" %> (<%= link_to t('buttons.add_new_page'), new_page_path, :class => "a-admin-menu" %>)</li>
+			<li><%= link_to current_user.name, edit_user_path(current_user), :class => "a-admin-menu" %> (<%= link_to t('buttons.exit'), signout_path, :method => :delete, :class => "a-admin-menu" %>)</li>
 		<% end %>
    	 </ul>   	 
  	</nav> 	 	

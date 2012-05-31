@@ -1,2 +1,9 @@
-<h1>Pages#edit</h1>
-<p>Find me in app/views/pages/edit.html.erb</p>
+<h1><%= t('page.page_edit_welcome') %></h1>
+
+
+<%= form_for(@page) do |f| %>
+  <%= render 'fields', :f => f %>
+  <div class="div-actions">
+    <%= f.submit t('buttons.save') %>
+  </div>
+<% end %>

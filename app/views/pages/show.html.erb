@@ -1,9 +1,11 @@
 <% content_for :title, @page.title %>
 <% content_for :metadescription, @page.metadescription %>
 <% content_for :metakeywords, @page.metakeywords %>
-<% content_for :head, @page.head %>
+<% content_for :head do %>
+  <%= raw @page.head %>
+<% end %>
 
 <div class="div-content">
-	<h1><%= @page.name %></h1>
-	<%= @page.content %>
+	<h1><%= raw @page.name %></h1>
+	<%= raw @page.content %>
 </div>

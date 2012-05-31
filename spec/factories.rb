@@ -22,7 +22,8 @@ Factory.define :page do |page|
   page.metakeywords "metakeywords example page"
   page.head "head example page"
   page.ismenu true
-    
+  page.order_id -1
+  page.parent_id -1  
 end
 
 Factory.define :user do |user|

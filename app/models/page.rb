@@ -2,15 +2,24 @@
 
 
 class Page < ActiveRecord::Base
+
   
-  attr_accessible :name, :title, :content, :metadescription, :metakeywords, :head, :ismenu
+  attr_accessible :name, :title, :content, :metadescription, :metakeywords, :head, :ismenu, :order_id, :parent_id
   
    validates :name,
                 :presence => true,
                 :length => {:maximum => 200} 
+ 
+   validates :title,
+                :presence => true,
+                :length => {:maximum => 200}
                 
    validates :content,
                 :presence => true
+    
+    
+    
+
   
 
 end

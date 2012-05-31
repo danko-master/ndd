@@ -11,7 +11,9 @@ Ndd::Application.routes.draw do
     
     #пути к ресурсам контроллеров      
     resources :mains
-    resources :pages
+    resources :pages do
+      collection { post :sort, :level }
+    end
     
     resources :users
 

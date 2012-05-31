@@ -251,19 +251,45 @@ ru:
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   page:
     main: "Главная"
+    main_edit_welcome: "Редактирование главной страницы"
     news: "События"
     admin_auth_welcome: "Пожалуйста, введите email и пароль для получения доступа к секретному уровню."
     admin_auth_welcome_header: "Вход в систему администрирования"
     user_profile_welcome: "Редактирование профиля"
+    page_edit_welcome: "Редактирование страницы"
+    page_new_welcome: "Создание страницы"
+    page_all_welcome: "Все страницы сайта"
+    confirm_delete: "Вы уверены? Подтвердите удаление."
+    item_move: "Тянуть"
   field:
     name: "Имя"
     password: "Пароль"
     password_confirm: "Подтверждение пароля"
+    page_name: "Название страницы"
+    page_title: "Title страницы"
+    page_meta_keywords: "Meta Keywords"
+    page_meta_description: "Meta Description"
+    page_head: "Поле для вставки в заголовок страницы (head)"
+    page_content: "Контент страницы"
+    page_is_menu: "Отображать в меню?"
+    page_order_id: "Сортировка"
+    page_parent_id: "ID родителя"
+    main_contact: "Контакты"
+    main_footer: "Подвал сайта"
+    main_counter: "Место для счетчика статистики (низ страницы перед body)"
   buttons:
     save: "Сохранить"
     finish: "Готово"
     enter: "Вход"
     exit: "Выход"
+    edit: "Редактировать"
+    delete: "Удалить"
+    all_pages_edit: "Редактор страниц"
+    add_new_page: "Создать новую"
+    to_level_up: "На уровень выше"
+    to_level_down: "На уровень ниже"
+    to_up: "Вверх"
+    to_down: "Вниз"
   activemodel:
     errors:
       <<: *errors
@@ -285,6 +311,12 @@ ru:
               user_update_error: "Ошибка обновления пользователя!"
               user_update_success: "Пользователь успешно обновлен!"
               user_destroy_success: "Пользователь успешно удалён!"
+            page:
+              page_create_success: "Страница успешно создана!"
+              page_create_error: "Ошибка создания страницы!"
+              page_update_error: "Ошибка обновления страницы!"
+              page_update_success: "Страница успешно обновлена!"
+              page_destroy_success: "Страница успешно удалёна!"
             domain:
              domain_error: "Введены неверные данные!"
              domain_update_error: "Ошибка обновления домена!"
