@@ -31,6 +31,8 @@ GEM
       multi_json (~> 1.0)
     annotate (2.4.1.beta1)
     arel (2.2.3)
+    bootstrap-will_paginate (0.0.7)
+      will_paginate
     builder (3.0.0)
     ckeditor (3.6.3)
       mime-types (~> 1.16)
@@ -140,12 +142,14 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
+    will_paginate (3.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   annotate (= 2.4.1.beta1)
+  bootstrap-will_paginate (= 0.0.7)
   ckeditor (= 3.6.3)
   coffee-rails (= 3.1.1)
   factory_girl_rails (= 1.7.0)
@@ -158,3 +162,4 @@ DEPENDENCIES
   therubyracer (= 0.9.9)
   uglifier (>= 1.0.3)
   webrat (= 0.7.3)
+  will_paginate (= 3.0.3)

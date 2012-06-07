@@ -1,0 +1,19 @@
+<h1><%= t('helpers.password_recovery')%></h1>
+
+<%= form_for(:user, :url => forgot_users_path) do |f| %>
+
+<div class="div-field">
+    <%= f.label :email, t('users.user_email') %><br />
+    <%= f.text_field :email, :class => "text-field" %>
+</div>
+
+<div><%= t('helpers.before_notice_email') %></div>
+        
+<div class="div-actions">
+    <%= f.submit t('buttons.send') %>
+</div>
+
+<%= link_to t('buttons.cancel'), root_path %>
+
+<% end %>
+<br/><br/>

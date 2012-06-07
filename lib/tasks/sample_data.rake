@@ -25,7 +25,12 @@ namespace :db do
                          :metadescription => "Meta description of page",
                          :metakeywords => "Meta keywords of page",
                          :head => "",
-                         :ismenu => true)  
+                         :ismenu => true)
+                         
+   article = Article.create!(:name => "Name first example article",
+                         :description => "Description first example article",
+                         :fulltext => "Full text first example article",
+                         :date => "04.04.2012")    
 
   end
 end

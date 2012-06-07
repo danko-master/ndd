@@ -33,3 +33,11 @@ Factory.define :user do |user|
   user.password_confirmation "foobar"
 end
 
+
+
+Factory.define :article do |article|
+  article.name "Name example article"
+  article.description "Description example article"
+  article.fulltext "Full text example article" 
+  article.date Date.today
+end

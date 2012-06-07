@@ -1,0 +1,9 @@
+<h1><%= t('page.article_new_welcome') %></h1>
+
+
+<%= form_for(@article) do |f| %>
+  <%= render 'fields', :f => f %>
+  <div class="div-actions">
+    <%= f.submit t('buttons.save') %>
+  </div>
+<% end %>

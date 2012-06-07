@@ -1,0 +1,8 @@
+
+		<ul class="ul-subpages">
+			<% @subpages.each do |child| %>
+				<%= content_tag_for :li, child, :class => 'li-subpage' do %>
+		        	<%= link_to child.name, child, :class => 'a-submenu' %> 
+		        <% end %>        
+			<% end %>
+		</ul>

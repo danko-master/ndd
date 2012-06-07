@@ -1,0 +1,18 @@
+<h1><%= t('page.article_all_welcome') %></h1>
+
+<%= will_paginate @articles %>
+<ul class="ul-article">
+    <% @articles.each do |article| %>
+      <%= content_tag_for :li, article, :class => 'li-article' do %>
+		<%= link_to article.name, article, :class => 'a-article' %>
+			<% if signed_in? %>
+    			(<%= link_to image_tag("buttons/edit.png", :alt => "#{t('buttons.edit')} #{article.name}", :title => "#{t('buttons.edit')} #{article.name}", :class => 'img-buttons'), edit_article_path(article.id) %>) 
+    			<%= link_to image_tag("buttons/delete.png", :alt => "#{t('buttons.delete')} #{article.name}", :title => "#{t('buttons.delete')} #{article.name}", :class => 'img-buttons'), article, :method => :delete, :confirm => t('page.confirm_delete') %> 
+        	<% end %>
+        	<div class='div-date-article'><%=t('field.article_date') %>:<%= article.date.strftime(t('date.formats.default')) %></div>
+        	<div class='div-article-description'><%= raw article.description %></div>        	
+        <% end %>
+    <% end %>
+</ul>
+
+<%= will_paginate @articles %>

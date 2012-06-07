@@ -1,16 +1,17 @@
 <header class="header">
-	<%= link_to logo, root_path %>
-	<%= main_page_data.contact %>
 	<nav>  	 
-   	 <ul>
-   	 	<li><%= link_to t('page.main'), root_path %><% if signed_in? %> (<%= link_to t('buttons.edit'), edit_main_path(main_page_data.id), :class => "a-admin-menu" %>)<% end %></li>
+   	 <ul class="ul-header">
+   	 	<li class="li-header-logo"><%= link_to logo, root_path %></li>
+   	 	<li class="li-header"><%= link_to t('page.main'), root_path, :class => "a-menu" %><% if signed_in? %> (<%= link_to t('buttons.edit'), edit_main_path(main_page_data.id), :class => "a-admin-menu" %>)<% end %></li>
     	<% for page in all_menu_pages %>
-			<li><%= link_to page.name, page %></li>
+			<li class="li-header"><%= link_to page.name, page, :class => "a-menu" %></li>
 		<%  end %>
 		<% if signed_in? %>
-			<li><%= link_to t('buttons.all_pages_edit'), pages_path, :class => "a-admin-menu" %> (<%= link_to t('buttons.add_new_page'), new_page_path, :class => "a-admin-menu" %>)</li>
-			<li><%= link_to current_user.name, edit_user_path(current_user), :class => "a-admin-menu" %> (<%= link_to t('buttons.exit'), signout_path, :method => :delete, :class => "a-admin-menu" %>)</li>
+			<li class="li-header"><%= link_to t('buttons.all_pages_edit'), pages_path, :class => "a-admin-menu" %> (<%= link_to t('buttons.add_new_page'), new_page_path, :class => "a-admin-menu" %>)</li>
+			<li class="li-header"><%= link_to t('buttons.all_articles_edit'), articles_path, :class => "a-admin-menu" %> (<%= link_to t('buttons.add_new_page'), new_article_path, :class => "a-admin-menu" %>)</li>
+			<li class="li-header"><%= link_to current_user.name, edit_user_path(current_user), :class => "a-admin-menu" %> (<%= link_to t('buttons.exit'), signout_path, :method => :delete, :class => "a-admin-menu" %>)</li>
 		<% end %>
    	 </ul>   	 
- 	</nav> 	 	
+ 	</nav> 	
+ 	<%= main_page_data.contact %> 	
 </header>

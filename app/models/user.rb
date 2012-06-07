@@ -1,7 +1,7 @@
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :reset_code
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
@@ -41,6 +41,23 @@ class User < ActiveRecord::Base
     return nil  if user.nil?
     (user && user.salt == cookie_salt) ? user : nil
   end
+  
+  # reset password
+  def create_reset_code
+      @reset = true
+      self.attributes = {:reset_code => Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )}
+      save(:validate=>false) # равносильно save(false) - обходим проверку
+  end
+  
+  
+  def recently_reset?
+      @reset
+  end
+
+  def delete_reset_code
+      self.attributes = {:reset_code => nil}
+      save(:validate=>false)
+  end
     
   
   private 
@@ -61,7 +78,8 @@ class User < ActiveRecord::Base
     def secure_hash(string)
       Digest::SHA2.hexdigest(string)
     end
-  
+    
+ 
 
 end# == Schema Information
 #

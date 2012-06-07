@@ -167,6 +167,12 @@ ru:
       create: Создать %{model}
       submit: Сохранить %{model}
       update: Сохранить %{model}
+    notice_email: "Инструкции по восстановлению отправлены на email"
+    before_notice_email: "На указанный адрес будут высланы интсрукции по восстановлению пароля"
+    password_recovery: "Форма восстановления пароля"
+    password_reset: "Форма сброса пароля"
+    password_reset_successful: "Пароль успешно обновлён"
+    password_reset_error: "Ошибка сброса пароля"
   number:
     currency:
       format:
@@ -248,6 +254,9 @@ ru:
       long: ! '%d %B %Y, %H:%M'
       short: ! '%d %b, %H:%M'
     pm: вечера
+  users:
+    welcome: "Пользователи системы"
+    user_email: "Email пользователя:"
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   page:
     main: "Главная"
@@ -259,12 +268,21 @@ ru:
     page_edit_welcome: "Редактирование страницы"
     page_new_welcome: "Создание страницы"
     page_all_welcome: "Все страницы сайта"
+    article_all_welcome: "События"
+    article_new_welcome: "Создание новой статьи"
     confirm_delete: "Вы уверены? Подтвердите удаление."
     item_move: "Тянуть"
+    next: "Следующая >>"
+    prev: "<< Предыдущая"
   field:
     name: "Имя"
     password: "Пароль"
+    new_password: "Новый пароль"
     password_confirm: "Подтверждение пароля"
+    article_date: "Дата"
+    article_name: "Название"
+    article_description: "Краткий текст"
+    article_fulltext: "Полный текст"
     page_name: "Название страницы"
     page_title: "Title страницы"
     page_meta_keywords: "Meta Keywords"
@@ -285,11 +303,18 @@ ru:
     edit: "Редактировать"
     delete: "Удалить"
     all_pages_edit: "Редактор страниц"
+    all_articles_edit: "Редактор статей"
     add_new_page: "Создать новую"
     to_level_up: "На уровень выше"
     to_level_down: "На уровень ниже"
     to_up: "Вверх"
     to_down: "Вниз"
+    send: "Отправить"
+    cancel: "Отмена"
+    reset: "Сбросить"
+  will_paginate:
+    next_label: "&gt;&gt;"
+    previous_label: "&lt;&lt;"
   activemodel:
     errors:
       <<: *errors

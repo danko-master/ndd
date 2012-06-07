@@ -18,6 +18,16 @@ describe PagesController do
     it "all pages in menu should be successful" do
         get :show, :id => @page
         assert_select "header nav ul li", {:minimum=>2}
+    end   
+    
+       
+   it "show sub pages" do        
+       @pagechild = Factory(:page)
+       @pagechild[:parent_id] = @page.id
+       
+       get :show, :id => @page
+       response.should have_selector("a",
+                                        :href => page_path(@pagechild))
     end    
   end
   

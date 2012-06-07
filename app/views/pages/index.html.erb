@@ -5,7 +5,7 @@
     <% @pages.where("parent_id = ?", -1).each do |page| %>
 		<%= content_tag_for :li, page, :class => 'li-page' do %>
 			<span class='handle'>[<%= t('page.item_move') %>]</span>
-        	[page <%= page.id %>] [parent <%= page.parent_id %>] [order <%= page.order_id %>] <%= link_to page.name, page %> 
+        	<%= link_to page.name, page %> 
     		(<%= link_to image_tag("buttons/edit.png", :alt => "#{t('buttons.edit')} #{page.name}", :title => "#{t('buttons.edit')} #{page.name}", :class => 'img-buttons'), edit_page_path(page.id) %>) 
     		<%= link_to image_tag("buttons/delete.png", :alt => "#{t('buttons.delete')} #{page.name}", :title => "#{t('buttons.delete')} #{page.name}", :class => 'img-buttons'), page, :method => :delete, :confirm => t('page.confirm_delete') %> 
         		<%= render 'childrens', :childrens => page %>

@@ -5,8 +5,6 @@
 	
 	<%= form_for(:session, :url => sessions_path) do |f| %>
 	
-
-	
 	  <div class="div-field">
 	    <%= f.label :email %><br />
 	    <%= f.text_field :email %>
@@ -19,5 +17,6 @@
 	    <%= f.submit t('buttons.enter') %>
 	  </div>
 	<% end %>
-
+	
+	<div class="div-field"><%= link_to t('helpers.password_recovery'), reset_path %></div><br/><br/>
 

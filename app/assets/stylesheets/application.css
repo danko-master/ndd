@@ -3,14 +3,98 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
+ *= custom-theme
  *= require_tree . 
 */
 
 
+body {
+	font-family: Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 0.85em;
+	color: #606879;
 
+	
+}
+
+h1 {
+	font-size: 1.25em;
+	margin-bottom: 4px;
+	color: #606879;
+}
+
+header {
+	height: 495px;
+	background: url(/assets/kid.png) center 100px no-repeat;
+	
+	margin-top: 10px;
+}
+
+footer {
+		background: url(/assets/base.png) center bottom no-repeat;
+		height: 42px;
+		width: 961px;
+}
+
+a {
+	color: #606879;
+}
+
+p {
+	padding-bottom: 3px;
+	padding-top: 3px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0px;
+}
+
+.ul-header {
+	padding-top: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin: 0px;	
+	
+	
+	
+}
+
+.li-header-logo {
+	padding-right: 50px;
+	margin: 0px;
+	float: left;
+	
+	list-style: none;
+}
+
+.li-header {
+	list-style-image: url(/assets/bul.png);
+	float: left;
+
+	
+	text-transform: uppercase;
+	font-size: 1.24em;
+	
+	margin-right: 50px;
+	padding-top: 35px;
+	
+}
+
+
+.a-menu {
+	color: #56a0ba;
+}
 
 .a-admin-menu {
-	color: #F65D20;
+	color: #000;
+}
+
+
+.div-body-width {
+	width: 960px;
+	
+	margin: 0 auto;
 }
 
 .div-field {
@@ -24,10 +108,11 @@
 }
 
 .div-content{	
-	margin-top: 40px;	
+	margin-top: 20px;	
 	margin-bottom: 20px;
 
 }
+
 
 
 .div-flash-error{	
@@ -93,6 +178,9 @@
   width: 400px;
 }
 
+.text-field-date {
+  width: 90px;
+}
 
 .img-buttons {
 	margin-left: 5px;
@@ -114,4 +202,27 @@
   height: 200px;
 }
 
+.ul-subpages {
+	float: left;
+
+	margin-top: 10px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 15px;
+	padding-right: 25px;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	
+	background: url(/assets/1px-bro.png) right top repeat-y;
+	background-size: 4px;
+}
+
+.li-subpage {
+	list-style: none;
+}
+
+.a-submenu {
+	color: #263148;
+}
 

@@ -1,0 +1,23 @@
+  <%= render 'layouts/error_page_messages', :object => f.object %>
+
+  <div class="div-field">
+    <%= f.label :date, t('field.article_date') %><br />
+    <%= f.text_field :date, :class => "text-field-date", :id => "datepicker" %>
+  </div>
+
+  <div class="div-field">
+    <%= f.label :name, t('field.article_name') %><br />
+    <%= f.text_field :name, :class => "text-field" %>
+  </div>
+
+  <div class="div-field">
+    <%= f.label :description, t('field.article_description') %><br />
+    <%= f.cktext_area :description, :class => "textarea-content" %>
+  </div>
+
+  <div class="div-field">
+    <%= f.label :fulltext, t('field.article_fulltext') %><br />
+    <%= f.cktext_area :fulltext, :class => "textarea-content" %>
+  </div>
+
+  

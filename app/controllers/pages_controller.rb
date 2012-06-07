@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   
   def show    
     @page = Page.find(params[:id])
+    @subpages = Page.where({:parent_id => @page.id}).order("order_id")
+    
   end
 
   def edit
@@ -27,7 +29,7 @@ class PagesController < ApplicationController
     @page = Page.new(params[:page])
     if @page.save
       flash[:success] = t('activerecord.errors.controllers.message.attributes.page.page_create_success')
-      redirect_to root_path
+      redirect_to pages_path
     else
       render 'new'
     end

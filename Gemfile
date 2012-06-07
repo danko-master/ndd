@@ -9,7 +9,9 @@ gem 'jquery-rails', '1.0.19'
 gem 'paperclip', '3.0.1'
 gem 'ckeditor', '3.6.3'
 
-
+#Постраничный вывод
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.7'
 
 group :assets do
   gem 'sass-rails',   '3.1.5' # создает css.scss файл

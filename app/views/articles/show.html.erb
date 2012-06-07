@@ -1,0 +1,11 @@
+<% content_for :title, @article.name %>
+<% content_for :metadescription, @main.metadescription %>
+<% content_for :metakeywords, @main.metakeywords %>
+<% content_for :head do %>
+  <%= raw @main.head %>
+<% end %>
+
+<div class="div-content">
+	<h1><%= raw @article.name %></h1>
+	<%= raw @article.fulltext %>
+</div>

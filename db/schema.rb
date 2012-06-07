@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120407234606) do
+ActiveRecord::Schema.define(:version => 20120606202954) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "name",        :default => "Empty name",        :null => false
+    t.text     "description", :default => "Empty description", :null => false
+    t.text     "fulltext",    :default => "Empty full text",   :null => false
+    t.date     "date",        :default => '2001-01-01',        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "articles", ["date"], :name => "index_articles_on_date"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -63,7 +74,8 @@ ActiveRecord::Schema.define(:version => 20120407234606) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",              :default => true
+    t.boolean  "admin",                            :default => true
+    t.string   "reset_code",         :limit => 40
   end
 
 end

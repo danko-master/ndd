@@ -1,0 +1,42 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.div-date-article {
+  font-size: 0.8em;
+  color: #777;
+  padding: 0px;
+  margin: 0px;
+}
+
+.div-article-description {
+  margin-bottom: 18px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.li-article {
+   list-style-type:none;
+   margin-bottom: 10px;
+}
+
+.ul-article {
+  padding: 0px;
+  margin: 0px;
+}
+
+.a-article {
+  font-weight: bold;
+}
+
+.pagination li {
+ display: inline;
+}
+
+.pagination .active {
+ font-weight: bold;
+}
+
+.pagination a {
+ text-decoration: none;
+}
+
