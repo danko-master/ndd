@@ -18,6 +18,7 @@
 
 /config/environments/production.rb
 /config/database.yml
+/webrat.log
 
 *.gem
 *.rbc
