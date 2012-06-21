@@ -16,9 +16,9 @@
 # Docs
 /doc/
 
-/config/environments/production.rb
-/config/database.yml
-/webrat.log
+config/environments/production.rb
+config/*.yml
+webrat.log
 
 *.gem
 *.rbc
