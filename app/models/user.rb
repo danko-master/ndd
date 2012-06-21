@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
       @reset = true
       self.attributes = {:reset_code => Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )}
       save(:validate=>false) # равносильно save(false) - обходим проверку
+      UserMailer.reset_password_email(self).deliver # Отправка письма с инструкциями сброса пароля
   end
   
   

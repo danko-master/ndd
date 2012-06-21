@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :except => [:forgot, :reset_password] # Предфильтр для вызова authenticate,
-                              #распространяется на все действия кроме указанных в  except
-  
+  before_filter :authenticate, :except => [:forgot, :reset_password] 
+  #Предфильтр для вызова authenticate,
+   #распространяется на все действия кроме указанных в  except
+   
   def show
     @user = User.find(params[:id])
   end
@@ -24,12 +25,11 @@ class UsersController < ApplicationController
       if request.post?
           user = User.find_by_email(params[:user][:email])
           if user
-            user.create_reset_code
+            user.create_reset_code              
           end
             flash[:notice] = t('helpers.notice_email')
             render :template => "sessions/new"
-            #Выводим одинаковое сообщение и рендерим ту же форму в любом случае, дабы не было возможности перебора возможных пользователей
-            #render 'new'          
+            #Выводим одинаковое сообщение и рендерим ту же форму в любом случае, дабы не было возможности перебора возможных пользователей         
       end
   end
     
@@ -48,6 +48,7 @@ class UsersController < ApplicationController
         end
       end
    end
+   
   
   private
 

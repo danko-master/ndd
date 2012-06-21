@@ -31,6 +31,7 @@ describe ArticlesController do
       @main = Factory(:main)
       @page = Factory(:page)
       @article = Factory(:article)
+      31.times { Factory(:article) } 
     end
      
       it "should deny delete button" do
@@ -38,13 +39,26 @@ describe ArticlesController do
         response.should_not have_selector("a",
                                         :"data-method" => "delete",
                                         :href => article_path(@article))
-      end
+     end
       
      it "should deny edit button" do
         get :index
         response.should_not have_selector("a",
                                         :href => edit_article_path(@article))
-      end
+     end
+      
+      
+     it "should show selector of pagination" do
+        get :index
+        response.should have_selector("a",
+                                        :href => "/articles?page=2")
+     end
+     
+     it "should show DIV selector of pagination" do
+        get :index
+        response.should have_selector('div', :class => 'pagination')
+     end
+      
     end
     
    describe "for signed-in users" do
@@ -53,6 +67,7 @@ describe ArticlesController do
         @main = Factory(:main)
         @page = Factory(:page)
         @article = Factory(:article)
+        31.times { Factory(:article) } 
         
         @user = test_sign_in(Factory(:user))
       end
@@ -63,6 +78,18 @@ describe ArticlesController do
         get :index
         response.should be_success
       end
+      
+      it "should show selector of pagination" do
+        get :index
+        response.should have_selector("a",
+                                        :href => "/articles?page=2")
+     end
+     
+     it "should show DIV selector of pagination" do
+        get :index
+        response.should have_selector('div', :class => 'pagination')
+     end
+      
     end
     
     

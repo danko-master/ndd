@@ -34,7 +34,6 @@ Factory.define :user do |user|
 end
 
 
-
 Factory.define :article do |article|
   article.name "Name example article"
   article.description "Description example article"

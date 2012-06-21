@@ -23,6 +23,7 @@ end
 group :development do
   gem 'rspec-rails', '2.9.0' # RSpec тесты
   gem 'annotate', '2.4.1.beta1' # Описание для модели
+ # gem 'letter_opener', '0.0.2' # Ловим письма
 end
 
 group :test do

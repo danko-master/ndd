@@ -3,7 +3,8 @@ require 'spec_helper'
 describe UsersController do
   
  render_views
-
+ 
+ 
   describe "GET 'show'" do
 
     before(:each) do
@@ -119,6 +120,64 @@ describe UsersController do
         response.should redirect_to(root_path)
       end      
     end
+    
+    describe "user's reset password" do  
+      it "GET 'reset page'" do
+        get :forgot
+        response.should have_selector("input", :id => 'user_email')
+      end  
+      
+      it "POST 'reset page'" do
+        User.should_receive(:find_by_email).with(@user.email)
+        post :forgot, :user => {"email" => @user.email}
+      end
+      
+      it "POST 'show notice'" do        
+        post :forgot, :user => {}
+        flash[:notice].should == I18n.t('helpers.notice_email')
+      end
+      
+      it "POST 'render new session'" do        
+        post :forgot, :user => {}
+        response.should render_template('sessions/new')
+      end
+      
+      it "POST 'reset password with reset code'" do
+        @user.reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+
+        User.should_receive(:find_by_reset_code).with(@user.reset_code)
+        post :reset_password, :reset_code => @user.reset_code
+      end
+      
+      it "POST 'delete reset code'" do
+        @attr = { :password => "newpassword", :password_confirmation => "newpassword" }
+        @user.reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+        
+        User.should_receive(:find_by_reset_code).with(@user.reset_code).and_return @user
+        post :reset_password, :reset_code => @user.reset_code, :user => { :password => @attr[:password], :password_confirmation => @attr[:password_confirmation] }
+        @user.reload
+        @user.password.should == @attr[:password]
+      end
+      
+     it "should have a flash message" do
+        @attr = { :password => "newpassword", :password_confirmation => "newpassword" }
+        @user.reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+        
+        User.should_receive(:find_by_reset_code).with(@user.reset_code).and_return @user
+        post :reset_password, :reset_code => @user.reset_code, :user => { :password => @attr[:password], :password_confirmation => @attr[:password_confirmation] }
+        flash[:success].should == I18n.t('helpers.password_reset_successful')
+      end
+      
+      it "should have a render NEW template" do
+        @attr = { :password => "newpassword", :password_confirmation => "newpassword" }
+        @user.reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+        
+        User.should_receive(:find_by_reset_code).with(@user.reset_code).and_return @user
+        post :reset_password, :reset_code => @user.reset_code, :user => { :password => @attr[:password], :password_confirmation => @attr[:password_confirmation] }
+        response.should render_template('sessions/new')
+      end
+    end
+    
   end
   
 end

@@ -174,6 +174,31 @@ describe User do
     end
 
   end
+  
+  describe "reset password" do
+    before(:each) do
+      @user = User.create!(@attr)
+    end
+    
+    it "should create reset code" do           
+      @user.create_reset_code
+      @user.reset_code.should_not be_nil
+    end    
+    
+    it "should send reset code by email" do           
+      @user.create_reset_code
+            
+      @email_confirmation = ActionMailer::Base.deliveries.last
+      @email_confirmation.to.should == [@user.email] 
+      @email_confirmation.subject.should == I18n.t('emailer.pass_reset.subject')
+      @email_confirmation.html_part.body.should match /#{@user.reset_code}/
+    end 
+    
+    it "should delete reset code" do           
+      @user.delete_reset_code
+      @user.reset_code.should be_nil
+    end
+  end
 
 end
 

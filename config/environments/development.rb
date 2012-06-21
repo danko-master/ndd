@@ -13,8 +13,13 @@ Ndd::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  #Mail catcher
+  config.action_mailer.delivery_method = :smtp #:letter_opener - alternative
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 } #Mail Catcher
+  # Care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
+  
+  
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -27,4 +32,12 @@ Ndd::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  
+ # DEFAULT_HOST = "localhost"
+  #DEFAULT_HOST_WITH_PORT = "www.#{DEFAULT_HOST}"
+ # DEFAULT_ROOT_URI = "http://#{DEFAULT_HOST_WITH_PORT}"
+  
+ # config.action_mailer.default_url_options = { :host => DEFAULT_HOST_WITH_PORT } # change this
+  
 end

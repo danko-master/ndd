@@ -173,6 +173,13 @@ ru:
     password_reset: "Форма сброса пароля"
     password_reset_successful: "Пароль успешно обновлён"
     password_reset_error: "Ошибка сброса пароля"
+    email_within: "Пароль должен иметь минимальную длину в 6 символов"
+  emailer:
+    header: Доброго времени суток, 
+    footer: С уважением, администратор сайта Нурлатского Детского Дома. 
+    pass_reset:
+      subject: Сброс пароля для сайта Нурлатского Детского Дома
+      body: Для сброса пароля, пожалуйста, перейдите по следующей ссылке      
   number:
     currency:
       format:
@@ -255,8 +262,8 @@ ru:
       short: ! '%d %b, %H:%M'
     pm: вечера
   users:
-    welcome: "Пользователи системы"
-    user_email: "Email пользователя:"
+    welcome: Пользователи системы
+    user_email: Email пользователя
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   page:
     main: "Главная"
