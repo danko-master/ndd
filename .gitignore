@@ -10,30 +10,25 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
-# Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
 # Docs
 /doc/
+
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/vendor/bundle
+/log/*
+/tmp/*
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
 
 /config/environments/production.rb
 /config/*.yml
 /*.log
 
-*.gem
-*.rbc
-.config
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
