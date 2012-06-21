@@ -34,6 +34,7 @@ Ndd::Application.routes.draw do
       match '/enter',  :to => 'sessions#new' # вход в админку, альтернативный путь
       match '/reset',  :to => 'users#forgot', :as => 'reset' # Сброс пароля 
       match '/reset_password/:reset_code',  :to => 'users#reset_password', :as => 'reset_password'
-
+      
+      match '*url' => 'errors#routing'
 
 end
