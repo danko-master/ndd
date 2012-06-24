@@ -6,7 +6,7 @@ gem 'therubyracer', '0.9.9' # для вызова javascript
 gem 'jquery-rails', '1.0.19'
 
 # Для upload и ckeditor
-gem 'paperclip', '3.0.1'
+gem 'paperclip', '3.1.2'
 gem 'ckeditor', '3.6.3'
 
 #Постраничный вывод

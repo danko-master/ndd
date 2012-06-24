@@ -1,3 +1,8 @@
+
+# Для 1gb# ENV['GEM_HOME']="#{ENV['HOME']}/.gems"
+# Для 1gb# ENV['GEM_PATH']="#{ENV['GEM_HOME']}:#{ENV['HOME']}/opt/ruby/current/lib/ruby/gems/1.9.1:/opt/ruby/current/lib/ruby/gems/1.9.1"
+
+
 # Load the rails application
 require File.expand_path('../application', __FILE__)
 
