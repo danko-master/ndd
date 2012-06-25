@@ -1,7 +1,7 @@
 <header class="header">
 	<nav>  	 
    	 <ul class="ul-header">
-   	 	<li class="li-header-logo"><%= link_to logo, root_path %></li>
+   	 	<li class="li-header-logo"><%= link_to logo, root_path %><% if signed_in? %> (<%= link_to t('buttons.edit'), edit_main_path(main_page_data.id), :class => "a-admin-menu" %>)<% end %></li>
    	 	<li class="li-header" style='display: none;'><%= link_to t('page.main'), root_path, :class => "a-menu" %><% if signed_in? %> (<%= link_to t('buttons.edit'), edit_main_path(main_page_data.id), :class => "a-admin-menu" %>)<% end %></li>
     	<% for page in all_menu_pages %>
 			<li class="li-header"><%= link_to page.name, page, :class => "a-menu" %></li>

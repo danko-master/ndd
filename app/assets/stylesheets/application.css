@@ -47,6 +47,8 @@ p {
 	padding-left: 0px;
 	padding-right: 0px;
 	margin: 0px;
+	
+	text-align: justify;
 }
 
 .ul-header {
@@ -220,6 +222,7 @@ p {
 
 .li-subpage {
 	list-style: none;
+	padding-bottom: 3px;
 }
 
 .a-submenu {
